@@ -1,0 +1,51 @@
+<div class="modal-body-div">
+  <div *ngIf="!data">
+    <h2 mat-dialog-title class="dialog-title">Create Product</h2>
+  </div>
+  <div *ngIf="data">
+    <h2 mat-dialog-title class="dialog-title">Update Product</h2>
+  </div>
+  <mat-icon class="c-p close-icon" (click)="onCloseClick()" color="primary" fontIcon="clear">clear</mat-icon>
+  <mat-dialog-content [class.spinner]="loading">
+    <div class="row display-dialog">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" placeholder="Title" [(ngModel)]="formData.title" (ngModelChange)="checkFormFields()"
+          required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" placeholder="Price" [(ngModel)]="formData.price"
+          (ngModelChange)="checkFormFields()" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" placeholder="Description" [(ngModel)]="formData.description"
+          (ngModelChange)="checkFormFields()" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Image URl</mat-label>
+        <input matInput type="text" placeholder="Image URl" [(ngModel)]="formData.image"
+          (ngModelChange)="checkFormFields()" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="formData.category" (ngModelChange)="checkFormFields()">
+          <mat-option *ngFor="let cat of categories" [value]="cat">{{
+            cat
+            }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="!data" class="dialog-Button">
+        <button mat-raised-button (click)="createProduct()" [disabled]="buttonDisabled">
+          Create
+        </button>
+      </div>
+      <div *ngIf="data" class="dialog-Button">
+        <button mat-raised-button (click)="updateProduct()" [disabled]="buttonDisabled">
+          Update
+        </button>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

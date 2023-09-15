@@ -1,0 +1,10 @@
+{
+  "dir":"ltr",	
+	"login": {
+		"formfield.username.name": "Username",
+		"formfield.username.placeholder": "Enter Username",
+		"formfield.password.name": "Password",
+		"formfield.password.placeholder": "Enter password",
+		"buttons.login": "Login"
+	}
+}

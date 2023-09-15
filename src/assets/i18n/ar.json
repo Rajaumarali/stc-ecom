@@ -1,0 +1,10 @@
+{
+  "dir":"rtl",	
+	"login":{
+		"formfield.username.name":"اسم المستخدم",
+		"formfield.username.placeholder":"ادخل اسم المستخدم",
+		"formfield.password.name":"كلمه السر",
+		"formfield.password.placeholder":"أدخل كلمة المرور",
+		"buttons.login":"تسجيل الدخول"
+	}
+}

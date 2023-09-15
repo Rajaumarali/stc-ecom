@@ -1,0 +1,72 @@
+/* admin-page.component.scss */
+
+.admin-container {
+  padding: 20px;
+}
+
+.admin-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #573b8a;
+  text-align: center;
+  margin-top: 6px;
+}
+
+// styles for add button
+.add-btn-container {
+  display: flow-root;
+}
+
+.add-btn-container .add-product-button {
+  float: right;
+  margin: 4% 0 2% 0;
+  background-color: #573b8a;
+  color: #ffffff;
+}
+
+// styles for table
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.logo-style {
+  position: absolute;
+  width: 80px;
+  top: 5px;
+  left: 10px;
+}
+
+.deleteIcon {
+  color: rgb(175, 0, 0);
+}
+
+.f-style {
+  float: right;
+}
+
+.logout-icon {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.i-style {
+  cursor: pointer;
+}
+
+// the admin product table for mobile screen set 
+@media (max-width: 768px) {
+
+  // control the overflow in x direction 
+  .mat-elevation-z8 {
+    overflow-x: scroll;
+  }
+
+  // filter input set in the left side in table 
+  .f-style {
+    float: left;
+  }
+}

@@ -1,0 +1,27 @@
+<!-- Login-page.component.ts -->
+
+<body>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="title">
+      <div class="title-center">
+        <label aria-hidden="true">Welcome To</label>
+        <label aria-hidden="true">STC</label>
+      </div>
+    </div>
+    <div class="login" [dir]="'dir' | translate">
+      <label for="chk" aria-hidden="true">Login</label>
+      <input type="email" name="username" placeholder='{{ "login.formfield.username.name" | translate }}'
+        [(ngModel)]="username" required />
+      <input type="password" name="password" placeholder='{{ "login.formfield.password.name" | translate }}'
+        [(ngModel)]="password" required />
+      <button (click)="onLogin()" [class.spinner]="loading" [disabled]="!username || !password">{{'login.buttons.login'
+        | translate
+        }}</button>
+      <select #langSelect class="lang-select" (change)="selectLanguage($event)">
+        <option value="en" [selected]="true">English</option>
+        <option value="ar">Arabic</option>
+      </select>
+    </div>
+  </div>
+</body>

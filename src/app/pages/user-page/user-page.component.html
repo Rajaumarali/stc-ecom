@@ -1,0 +1,48 @@
+<div class="user-container">
+  <img src="assets/logos/stcLogo.webp" class="logo-style" />
+  <mat-icon class="logout-icon" (click)="logout()">logout</mat-icon>
+  <!-- Product Category Navbar -->
+  <ul class="container lime pullUp">
+    <li *ngFor="let category of categories;let i = index"><a (click)="filterProductsListByCategory(category)"> {{
+        category }}</a></li>
+    <li><a *ngIf="categories.length > 0" (click)="resetProductList()">Show All</a></li>
+  </ul>
+
+  <nav role="navigation" class="hamburger-menu">
+    <div id="menuToggle">
+      <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
+      <input type="checkbox" />
+      <!--Some spans to act as a hamburger. They are acting like a real hamburger, not that McDonalds stuff. -->
+      <span></span>
+      <span></span>
+      <span></span>
+      <!--the menu has to be inside of the button-->
+      <ul id="menu">
+        <li *ngFor="let category of categories;let i = index"><a (click)="filterProductsListByCategory(category)"> {{
+            category }}</a></li>
+        <li><a *ngIf="categories.length > 0" (click)="resetProductList()">Show All</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- product title -->
+  <h2 *ngIf="productList.length > 0" class="title-category">{{defaultCategory}}</h2>
+  <!-- Product Cards  -->
+  <div class="row" [class.spinner]="loading">
+    <div class="card-container">
+      <div class="card" *ngFor="let product of productList">
+        <header class="card__thumb">
+          <a href="#"><img [src]="product.image" alt="Product" /></a>
+        </header>
+        <div class="card__body">
+          <h2 class="card__title"><a href="#">{{ product.title }}</a></h2>
+          <p class="card__description">{{ product.description }}</p>
+
+        </div>
+        <div class="footer-price">
+          <div class="card__category"><a href="#">${{ product.price }}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

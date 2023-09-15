@@ -1,0 +1,445 @@
+/* user-page.component.scss */
+
+.logo-style {
+  position: absolute;
+  width: 80px;
+  top: 10px;
+  left: 10px;
+}
+
+
+// spinner style
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 46%;
+  margin: 0px 40%;
+  z-index: 9;
+  border-radius: 50%;
+  border: 3px solid #c2c2c2;
+  border-top-color: #573b8a;
+  animation: spinner 0.9s linear infinite;
+}
+
+//logout Icon
+.logout-icon {
+  color: #573b8a;
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  cursor: pointer;
+}
+
+//  product category Menus styles
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 952px;
+  text-align: center;
+  margin: 0px auto;
+  padding: 30px;
+}
+
+ul li {
+  list-style: none;
+  margin: 0 20px;
+  transition: 0.5s;
+}
+
+ul.container a {
+  color: #573b8a;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+ul.pullUp a:before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0px;
+  bottom: 0px;
+  content: '';
+  opacity: 0.3;
+  background: #512c84;
+  transition: all 0.3s;
+}
+
+ul.pullUp a:hover:before {
+  height: 100%;
+}
+
+
+// prodcut categorie title
+.title-category {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background: #512c83;
+  margin-top: 4%;
+}
+
+// card design
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 3% 5%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* Adjust the margin as needed */
+}
+
+.card {
+  width: 370px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  position: relative;
+  margin: 20px auto;
+  background-color: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.5s;
+}
+
+.card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+/**
+* THUMB
+**/
+.card__thumb {
+  height: 245px;
+  overflow: hidden;
+
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.card__thumb img {
+  width: 100%;
+  display: block;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+
+.card:hover .card__thumb {
+  height: 130px;
+  background-color: #000;
+}
+
+.card:hover .card__thumb img {
+  opacity: 0.6;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/**
+* card_BODY
+**/
+
+.card__body {
+  position: relative;
+  height: 100px;
+  padding: 20px;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.card:hover .card__body {
+  height: 300px;
+}
+
+.card__category {
+  padding: 5px 15px;
+  width: 50px;
+  text-align: center;
+  background-color: #512c84;
+  color: #fff;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 25px;
+  border-radius: 20px;
+}
+
+.card__title {
+  padding: 0 0 10px 0;
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 19px;
+  color: coral;
+}
+
+.card__description {
+  overflow: hidden;
+  padding: 0;
+  font-weight: bold;
+  font-size: 9px;
+  color: #666C74;
+  line-height: 20px;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.3s, transform 0.3s;
+  transition-delay: 0s;
+}
+
+.card:hover .card__description {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.card__footer {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  right: 20px;
+  font-size: 11px;
+  color: #A3A9A2;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 0 0 2px;
+  font-size: 18px;
+}
+
+.icon+.icon {
+  padding-left: 10px;
+}
+
+// hamburger Menu for small devices
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 32px;
+  left: 25px;
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #ffffff;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #512c84;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * the last one should go the other direction
+ */
+#menuToggle input:checked~span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding-top: 125px;
+  background: #512c84;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked~ul {
+  transform: none;
+  display: block;
+}
+
+
+.hamburger-menu {
+  display: none;
+  /* Initially hidden */
+}
+
+// Media queries for responsiveness
+@media screen and (max-width: 991px) {
+  ul li a {
+    font-size: 18px;
+  }
+
+  .logo-style {
+    margin: 0 44%;
+  }
+
+  .title-category {
+    margin-top: 12% !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  ul li a {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .logo-style {
+    margin: 0 37%;
+  }
+
+  ul {
+    padding: 30px 0px;
+  }
+
+  .card {
+    width: unset !important;
+  }
+
+  .title-category {
+    margin-top: 20% !important;
+  }
+}
+
+/* Media query to show/hide the hamburger menu */
+@media (max-width: 1100px) {
+  .container.lime.pullUp {
+    display: none;
+    /* Hide the regular navbar on smaller screens */
+  }
+
+  ul li {
+    margin: 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+    /* Show the hamburger menu on smaller screens */
+  }
+}
